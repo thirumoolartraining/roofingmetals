@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Sri Pachaiamman Roofing & Metals Design System */
+
+@layer base {
+  :root {
+    /* Industrial Color Palette */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 11%;
+    
+    /* Brand Colors */
+    --steel-gray: 0 0% 23%;
+    --roofing-blue: 206 100% 30%;
+    --safety-orange: 18 75% 45%;
+    --light-gray: 0 0% 95%;
+    --black-onyx: 0 0% 11%;
+    --success-green: 123 40% 32%;
+    
+    /* Component Tokens */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 11%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 11%;
+    
+    --primary: 206 100% 30%;
+    --primary-foreground: 0 0% 98%;
+    
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 23%;
+    
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 45%;
+    
+    --accent: 18 75% 45%;
+    --accent-foreground: 0 0% 98%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 0 0% 90%;
+    --input: 0 0% 100%;
+    --ring: 206 100% 30%;
+    
+    /* Industrial Design Tokens */
+    --industrial-base: 0 0% 23%;
+    --trust-badge: 123 40% 32%;
+    --cta-primary: 18 75% 45%;
+    --cta-hover: 18 80% 40%;
+    
+    /* Spacing Scale */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 3rem;
+    --spacing-xl: 4rem;
+    
+    /* Radius */
+    --radius: 0.375rem;
+    --radius-card: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Keep same industrial color scheme in dark mode */
+    --background: 0 0% 8%;
+    --foreground: 0 0% 95%;
+    
+    --card: 0 0% 11%;
+    --card-foreground: 0 0% 95%;
+    
+    --popover: 0 0% 11%;
+    --popover-foreground: 0 0% 95%;
+    
+    --primary: 206 100% 40%;
+    --primary-foreground: 0 0% 98%;
+    
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 95%;
+    
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+    
+    --accent: 18 75% 50%;
+    --accent-foreground: 0 0% 98%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 206 100% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-oswald font-semibold uppercase tracking-wide;
+  }
+  
+  .font-specs {
+    @apply font-roboto-mono;
+  }
+}
+
+@layer components {
+  /* Industrial Button Variants */
+  .btn-hero {
+    @apply bg-accent text-accent-foreground hover:bg-[hsl(var(--cta-hover))] font-oswald font-semibold uppercase tracking-wide px-8 py-4 rounded-md transition-all duration-200 transform hover:scale-105 shadow-lg;
+  }
+  
+  .btn-secondary {
+    @apply bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground font-oswald font-medium uppercase tracking-wide px-6 py-3 rounded-md transition-all duration-200;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-oswald font-medium uppercase tracking-wide px-6 py-3 rounded-md transition-all duration-200;
+  }
+  
+  /* Product Card Styles */
+  .product-card {
+    @apply bg-card border border-border rounded-[var(--radius-card)] overflow-hidden hover:shadow-lg transition-all duration-300 hover:-translate-y-1;
+  }
+  
+  /* Trust Badge */
+  .trust-badge {
+    @apply inline-flex items-center gap-2 bg-[hsl(var(--trust-badge))] text-white px-4 py-2 rounded-md font-medium text-sm;
+  }
+  
+  /* Industrial Section */
+  .industrial-section {
+    @apply bg-[hsl(var(--industrial-base))] text-white;
+  }
+  
+  /* Category Card */
+  .category-card {
+    @apply bg-card border border-border rounded-[var(--radius-card)] p-6 hover:border-primary transition-all duration-200 cursor-pointer hover:shadow-md;
+  }
+}
